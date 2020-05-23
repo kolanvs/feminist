@@ -23,10 +23,14 @@ public class NodeList {
 
     }
 
-
     ArrayList<Double> getCoords(Integer nodeNumber){
 
         return nodeListMap.get(nodeNumber);
+    }
+
+    Node getNode(Integer nodeNumber){
+
+        return new Node(nodeNumber, this);
 
     }
 
