@@ -4,33 +4,33 @@ import java.util.*;
 
 public class NodeList {
 
-    private Map<Integer, ArrayList<Double>> nodeListMap;
+    private TreeMap<Integer, Node> nodeListMap;
     private Integer size;
 
 
-    NodeList(ArrayList<Integer> numberArray, ArrayList<ArrayList<Double>> coordsArray){
+    NodeList(){
 
-        this.size = numberArray.size();
-
-        try {
-            for (int i = 0; i < this.size; i++)
-                this.nodeListMap.put(numberArray.get(i), coordsArray.get(i));
-        }
-        catch (NullPointerException e) {
-            System.out.println("Error! Null pointer");
-        }
-
+        this.size = 0;
+        this.nodeListMap = new TreeMap<>();
 
     }
 
-    ArrayList<Double> getCoords(Integer nodeNumber){
+    public void putNode(Integer nodeNumber, ArrayList<Double> coords){
 
-        return nodeListMap.get(nodeNumber);
+        this.nodeListMap.put(nodeNumber, new Node(nodeNumber, coords));
+
     }
 
-    Node getNode(Integer nodeNumber){
 
-        return new Node(nodeNumber, this);
+    public Node getNode(Integer nodeNumber){
+
+        return this.nodeListMap.get(nodeNumber);
+
+    }
+
+    public ArrayList<Double> getCoords(Integer nodeNumber){
+
+        return this.getNode(nodeNumber).getCoords();
 
     }
 
