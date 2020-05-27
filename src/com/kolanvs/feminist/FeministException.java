@@ -5,9 +5,7 @@ public class FeministException extends Exception {
     Integer excCode;
 
     FeministException(Integer code){
-
         this.excCode = code;
-
     }
 
     public String toString() {

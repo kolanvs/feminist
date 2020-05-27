@@ -11,6 +11,7 @@ import java.io.ObjectInputStream;
 import java.io.RandomAccessFile;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Method;
+import java.lang.ref.Cleaner;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.MappedByteBuffer;
@@ -372,9 +373,8 @@ public class MatFileReader
                     Method getCleanerMethod = buffer.getClass().getMethod(
                             "cleaner", new Class[0]);
                     getCleanerMethod.setAccessible(true);
-                    sun.misc.Cleaner cleaner = (sun.misc.Cleaner) getCleanerMethod
+                    Cleaner cleaner = (Cleaner) getCleanerMethod
                             .invoke(buffer, new Object[0]);
-                    cleaner.clean();
                 }
                 catch (Exception e)
                 {
