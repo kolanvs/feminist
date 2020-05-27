@@ -29,9 +29,7 @@ public class NodeReader implements FEModelFileReader{
      * @param file File object
      */
     NodeReader(File file){
-
         this.nodeFile = file;
-
     }
 
     /**This method implements the method announced in the {@code FEModelFileReader} interface,

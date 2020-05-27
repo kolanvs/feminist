@@ -5,14 +5,13 @@ import java.util.*;
 public class NodeList extends FEModelList {
 
     private TreeMap<Integer, Node> nodeListMap;
-
     private Integer size;
-
     private Integer readErrors;
 
 
     NodeList(){
         this.size = 0;
+        this.readErrors = 0;
         this.nodeListMap = new TreeMap<>();
     }
 

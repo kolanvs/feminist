@@ -21,8 +21,6 @@ public class Node {
     private Integer quantityConnectedElems = 0;
 
 
-    private NodeList nodeList;
-
     Node(Integer nodeNumber, ArrayList<Double> coords) {
 
         this.number = nodeNumber;
